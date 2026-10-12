@@ -1,0 +1,20 @@
+{
+  "13_tools": true,
+  "static_selector": true,
+  "title": true,
+  "markdown_code_and_no_nav": true,
+  "empty_selector": true,
+  "invalid_session": true,
+  "http_timeout": true,
+  "http_cookie_reuse": true,
+  "dynamic_one_shot_js": true,
+  "dynamic_session_js": true,
+  "dynamic_cookie_reuse": true,
+  "screenshot_image": true,
+  "browser_timeout": true,
+  "stealthy_one_shot_js": true,
+  "stealthy_session_js": true,
+  "stealthy_cookie_reuse": true,
+  "missing_browser_error": true,
+  "no_sessions_remaining": true
+}

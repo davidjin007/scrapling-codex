@@ -1,0 +1,17 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "scrapling_local": {
+      "type": "stdio",
+      "command": "uvx",
+      "args": [
+        "--from",
+        "scrapling[ai]==0.4.15",
+        "scrapling-mcp"
+      ],
+      "env": {
+        "SCRAPLING_EXECUTABLE_PATH": "C:/Program Files/Google/Chrome/Application/chrome.exe"
+      }
+    }
+  }
+}

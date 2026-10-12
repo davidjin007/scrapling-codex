@@ -1,0 +1,11 @@
+﻿url,final_url,title,collected_at,status,http_status,file,code_blocks,error
+https://gofastmcp.com/getting-started/welcome,https://gofastmcp.com/getting-started/welcome,FastMCP: The Framework for MCP,2026-10-12T16:43:12.241384+00:00,ok,200,pages/0080da8e0e567214.md,2,
+https://gofastmcp.com/getting-started/installation,https://gofastmcp.com/getting-started/installation,Installation,2026-10-12T16:43:13.241835+00:00,ok,200,pages/6f60fb36445fef50.md,9,
+https://gofastmcp.com/getting-started/quickstart,https://gofastmcp.com/getting-started/quickstart,Quickstart,2026-10-12T16:43:14.242259+00:00,ok,200,pages/2603b2dc67646406.md,6,
+https://gofastmcp.com/servers/server,https://gofastmcp.com/servers/server,The FastMCP Server,2026-10-12T16:43:15.242565+00:00,ok,200,pages/5484ccc9348b2d70.md,11,
+https://gofastmcp.com/servers/tools,https://gofastmcp.com/servers/tools,Tools,2026-10-12T16:43:16.242840+00:00,ok,200,pages/3e183163a44bbe86.md,33,
+https://gofastmcp.com/servers/resources,https://gofastmcp.com/servers/resources,Resources & Templates,2026-10-12T16:43:17.242899+00:00,ok,200,pages/7d9fdf6d7762f2b9.md,24,
+https://gofastmcp.com/servers/prompts,https://gofastmcp.com/servers/prompts,Prompts,2026-10-12T16:43:18.243145+00:00,ok,200,pages/79051b9248d278c2.md,16,
+https://gofastmcp.com/servers/auth/authentication,https://gofastmcp.com/servers/auth/authentication,Authentication,2026-10-12T16:43:19.243873+00:00,ok,200,pages/8e2f97a45788215a.md,6,
+https://gofastmcp.com/deployment/running-server,https://gofastmcp.com/deployment/running-server,Running Your Server,2026-10-12T16:43:20.244448+00:00,ok,200,pages/66ae9657707dbcff.md,13,
+https://gofastmcp.com/clients/client,https://gofastmcp.com/clients/client,The FastMCP Client,2026-10-12T16:43:21.245340+00:00,ok,200,pages/062116a573f2c964.md,21,

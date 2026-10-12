@@ -1,0 +1,37 @@
+{
+  "meta": null,
+  "protocol_version": "2025-11-25",
+  "capabilities": {
+    "experimental": null,
+    "logging": null,
+    "prompts": {
+      "list_changed": false
+    },
+    "resources": {
+      "subscribe": false,
+      "list_changed": false
+    },
+    "tools": {
+      "list_changed": false
+    },
+    "completions": null,
+    "extensions": null,
+    "tasks": null
+  },
+  "server_info": {
+    "name": "Scrapling",
+    "title": "Scrapling",
+    "version": "0.4.15",
+    "description": null,
+    "website_url": "https://scrapling.readthedocs.io/en/latest/ai/mcp-server.html",
+    "icons": [
+      {
+        "src": "https://raw.githubusercontent.com/D4Vinci/Scrapling/main/docs/assets/logo.png",
+        "mime_type": "image/png",
+        "sizes": null,
+        "theme": null
+      }
+    ]
+  },
+  "instructions": "Follow these instructions precisely:\n1. When the `open_session` or `open_request_session` tools are used, make sure to close the session with `close_session` after you finish, and use `list_sessions` if you lose track of the open sessions or their effective settings.\n2. If the user didn't specify which tool to use, start with the `make_request` tool (a plain HTTP request, defaulting to GET; set `method` for POST/PUT/DELETE), then escalate. The `make_request` tool and `bulk_get` (its GET-only bulk version) are suitable only for low-to-mid protection levels.\n    For high-protection levels or websites that require JS loading, use the other tools directly.\n3. For all tools, if the `css_selector` resolves to more than one element, all the elements will be returned.\n4. For all fetch tools, the `extraction_type` parameter controls the format of the returned content: \"markdown\" (default) converts the page content to Markdown, \"html\" returns the raw HTML, and \"text\" returns the text content of the page.\n5. For all fetch tools, `main_content_only` is enabled by default and returns only the content inside the page's `<body>` tag. Pass `main_content_only=False` when you need the full page instead.\n6. If the task consists of multiple sequential requests to the same website, open a session once, then fetch through it to be more efficient:\n    `open_session` + `session_fetch` per page for browsers, or `open_request_session` + `session_make_request` per request for plain HTTP.\n7. Sessions hold the session-level configuration set when opened, while `session_fetch`/`session_make_request` carry the per-request options and apply them on each call with the defaults shown in their schemas.\n    The one-shot tools (`make_request`, `bulk_get`, `fetch`, `bulk_fetch`, `stealthy_fetch`, `bulk_stealthy_fetch`) never touch sessions.\n8. If you are making multiple parallel one-shot requests, use the bulk version of the tool to be more efficient.\n9. If you are crawling/browsing a website, be more efficient by using the `css_selector` parameter to only access the parts you are interested in and save money/time. Example: use the `a` selector to extract the urls right away.\n10. The user can pass a CDP URL to connect to a remote browser session through the `open_session` tool, then use it with the session tools.\n"
+}

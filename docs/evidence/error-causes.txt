@@ -1,0 +1,7 @@
+ValueError: Session 'not-present' not found. Use list_sessions to see active sessions.
+[2026-10-12 08:25:38] ERROR: Failed after 1 attempts: Failed to perform, curl: (28) Operation timed out after 113 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+Failed after 1 attempts: Failed to perform, curl: (28) Operation timed out after 113 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+curl_cffi.curl.CurlError: Failed to perform, curl: (28) Operation timed out after 113 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+curl_cffi.requests.exceptions.Timeout: Failed to perform, curl: (28) Operation timed out after 113 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 100ms exceeded.
+ValueError: Browser executable path not found: <LOCAL_USER_HOME>\Documents\Codex Project\��������\artifacts\mcp\does-not-exist.exe

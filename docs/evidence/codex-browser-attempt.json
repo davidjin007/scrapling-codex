@@ -1,0 +1,83 @@
+[
+  {
+    "id": "item_2",
+    "type": "mcp_tool_call",
+    "server": "scrapling_local",
+    "tool": "make_request",
+    "arguments": {
+      "url": "https://gofastmcp.com/getting-started/installation",
+      "method": "GET",
+      "css_selector": "#content",
+      "extraction_type": "markdown",
+      "main_content_only": false,
+      "timeout": 30,
+      "retries": 1
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": 200,\n  \"content\": [\n    \"[​](#install-fastmcp) Install FastMCP\\n-------------------------------------\\n\\nWe recommend using [uv](https://docs.astral.sh/uv/getting-started/installation/) to install and manage FastMCP.\\n\\n```\\nuv add fastmcp\\n```\\n\\nOr with pip:\\n\\n```\\npip install fastmcp\\n```\\n\\n### [​](#optional-dependencies) Optional Dependencies\\n\\nFastMCP provides optional extras for specific features. For example, to install the background tasks extra:\\n\\n```\\npip install \\\"fastmcp[tasks]\\\"\\n```\\n\\nSee [Background Tasks](/servers/tasks) for details on the task system.\\n\\n### [​](#verify-installation) Verify Installation\\n\\nTo verify that FastMCP is installed correctly, you can run the following command:\\n\\n```\\nfastmcp version\\n```\\n\\nYou should see output like the following:\\n\\n```\\n$ fastmcp version\\n\\nFastMCP version:                           4.0.0\\nMCP version:                                2.0.0\\nPython version:                            3.12.2\\nPlatform:            macOS-15.3.1-arm64-arm-64bit\\nFastMCP root path:            ~/Developer/fastmcp\\n```\\n\\n### [​](#dependency-licensing) Dependency Licensing\\n\\nFastMCP depends on Cyclopts for CLI functionality. Cyclopts v4 includes docutils as a transitive dependency, which has complex licensing that may trigger compliance reviews in some organizations.If this is a concern, you can install Cyclopts v5 alpha which removes this dependency:\\n\\n```\\npip install \\\"cyclopts>=5.0.0a1\\\"\\n```\\n\\nAlternatively, wait for the stable v5 release. See [this issue](https://github.com/BrianPugh/cyclopts/issues/672) for details.\\n\\n[​](#upgrading) Upgrading\\n-------------------------\\n\\n### [​](#from-fastmcp-3-0) From FastMCP 3.0\\n\\nMost FastMCP 3 servers run on 4 without changes. See [Upgrading from FastMCP 3](/getting-started/upgrading/from-fastmcp-3) for the breaks that do exist, and [What’s New](/getting-started/whats-new) for what the new version adds.\\n\\n### [​](#from-fastmcp-2-0) From FastMCP 2.0\\n\\nSee the [Upgrade Guide](/getting-started/upgrading/from-fastmcp-2) for a complete list of breaking changes and migration steps.\\n\\n### [​](#from-the-mcp-sdk) From the MCP SDK\\n\\nWhich guide you want depends on which `mcp` version you’re on and which of its two server APIs you used.\\n\\n#### [​](#from-the-high-level-server) From the high-level server\\n\\nIf you’re using FastMCP 1.0 via SDK v1 (meaning you import FastMCP as `from mcp.server.fastmcp import FastMCP`), upgrading is straightforward — for most servers it’s a single import change. See [Upgrading from MCP SDK v1](/getting-started/upgrading/from-mcp-sdk-v1), which also explains why that route is usually easier than moving to MCP SDK v2.\\nIf you already moved to SDK v2 and write against `MCPServer`, see [Upgrading from MCP SDK v2](/getting-started/upgrading/from-mcp-sdk-v2) — that migration is mostly renaming.\\n\\n#### [​](#from-the-low-level-server) From the low-level server\\n\\nIf you built your server directly on the `mcp` package’s `Server` class, the guide you want depends on how its handlers are registered. Decorators like `@server.list_tools()` mean SDK v1 — see [Upgrading from the Low-Level SDK v1](/getting-started/upgrading/from-low-level-sdk-v1). Handlers passed to the constructor as `on_list_tools=` mean SDK v2 — see [Upgrading from the Low-Level SDK v2](/getting-started/upgrading/from-low-level-sdk-v2).\\n\\n[​](#troubleshooting) Troubleshooting\\n-------------------------------------\\n\\n### [​](#import-fastmcp-fails-after-a-pip-upgrade) `import fastmcp` fails after a pip upgrade\\n\\nThis affects one specific case: upgrading to FastMCP 3.3 or later from FastMCP 3.2 or earlier with `pip`. Fresh installs and `uv` upgrades are unaffected, so you can skip this unless you did exactly that.\\nIf `import fastmcp` raises `ModuleNotFoundError`, or `from fastmcp import FastMCP` raises `ImportError`, immediately after the upgrade, your install is in a half-removed state. Reinstall in a single step:\\n\\n```\\npip install --force-reinstall fastmcp\\n```\\n\\nIf that doesn’t resolve it, remove both distributions and reinstall from a clean state:\\n\\n```\\npip uninstall -y fastmcp fastmcp-slim\\npip install fastmcp\\n```\\n\\nFastMCP 3.3 moved the importable code from the `fastmcp` distribution into `fastmcp-slim`. During a single-command `pip` upgrade, pip can install the new files and then delete them while uninstalling the old `fastmcp` distribution, whose file manifest still lists those paths. `uv` uninstalls before it installs, so it is unaffected.\\n\\n[​](#versioning-policy) Versioning Policy\\n-----------------------------------------\\n\\nFastMCP follows semantic versioning with pragmatic adaptations for the rapidly evolving MCP ecosystem. Breaking changes may occur in minor versions (e.g., 2.3.x to 2.4.0) when necessary to stay current with the MCP Protocol.\\nFor production use, always pin to exact versions:\\n\\n```\\nfastmcp==4.0.5    # Good - an exact version\\nfastmcp>=4.0.0    # Bad - may install breaking changes\\n```\\n\\nSee the full [versioning and release policy](/development/releases#versioning-policy) for details on our public API, deprecation practices, and breaking change philosophy.\\n\\n[​](#contributing-to-fastmcp) Contributing to FastMCP\\n-----------------------------------------------------\\n\\nThe [Contributing Guide](/development/contributing) covers setting up a development environment, running the test suite and pre-commit hooks, and the standards we hold contributed code to.\",\n    \"\"\n  ],\n  \"url\": \"https://gofastmcp.com/getting-started/installation\"\n}"
+        }
+      ],
+      "structured_content": {
+        "status": 200,
+        "content": [
+          "[​](#install-fastmcp) Install FastMCP\n-------------------------------------\n\nWe recommend using [uv](https://docs.astral.sh/uv/getting-started/installation/) to install and manage FastMCP.\n\n```\nuv add fastmcp\n```\n\nOr with pip:\n\n```\npip install fastmcp\n```\n\n### [​](#optional-dependencies) Optional Dependencies\n\nFastMCP provides optional extras for specific features. For example, to install the background tasks extra:\n\n```\npip install \"fastmcp[tasks]\"\n```\n\nSee [Background Tasks](/servers/tasks) for details on the task system.\n\n### [​](#verify-installation) Verify Installation\n\nTo verify that FastMCP is installed correctly, you can run the following command:\n\n```\nfastmcp version\n```\n\nYou should see output like the following:\n\n```\n$ fastmcp version\n\nFastMCP version:                           4.0.0\nMCP version:                                2.0.0\nPython version:                            3.12.2\nPlatform:            macOS-15.3.1-arm64-arm-64bit\nFastMCP root path:            ~/Developer/fastmcp\n```\n\n### [​](#dependency-licensing) Dependency Licensing\n\nFastMCP depends on Cyclopts for CLI functionality. Cyclopts v4 includes docutils as a transitive dependency, which has complex licensing that may trigger compliance reviews in some organizations.If this is a concern, you can install Cyclopts v5 alpha which removes this dependency:\n\n```\npip install \"cyclopts>=5.0.0a1\"\n```\n\nAlternatively, wait for the stable v5 release. See [this issue](https://github.com/BrianPugh/cyclopts/issues/672) for details.\n\n[​](#upgrading) Upgrading\n-------------------------\n\n### [​](#from-fastmcp-3-0) From FastMCP 3.0\n\nMost FastMCP 3 servers run on 4 without changes. See [Upgrading from FastMCP 3](/getting-started/upgrading/from-fastmcp-3) for the breaks that do exist, and [What’s New](/getting-started/whats-new) for what the new version adds.\n\n### [​](#from-fastmcp-2-0) From FastMCP 2.0\n\nSee the [Upgrade Guide](/getting-started/upgrading/from-fastmcp-2) for a complete list of breaking changes and migration steps.\n\n### [​](#from-the-mcp-sdk) From the MCP SDK\n\nWhich guide you want depends on which `mcp` version you’re on and which of its two server APIs you used.\n\n#### [​](#from-the-high-level-server) From the high-level server\n\nIf you’re using FastMCP 1.0 via SDK v1 (meaning you import FastMCP as `from mcp.server.fastmcp import FastMCP`), upgrading is straightforward — for most servers it’s a single import change. See [Upgrading from MCP SDK v1](/getting-started/upgrading/from-mcp-sdk-v1), which also explains why that route is usually easier than moving to MCP SDK v2.\nIf you already moved to SDK v2 and write against `MCPServer`, see [Upgrading from MCP SDK v2](/getting-started/upgrading/from-mcp-sdk-v2) — that migration is mostly renaming.\n\n#### [​](#from-the-low-level-server) From the low-level server\n\nIf you built your server directly on the `mcp` package’s `Server` class, the guide you want depends on how its handlers are registered. Decorators like `@server.list_tools()` mean SDK v1 — see [Upgrading from the Low-Level SDK v1](/getting-started/upgrading/from-low-level-sdk-v1). Handlers passed to the constructor as `on_list_tools=` mean SDK v2 — see [Upgrading from the Low-Level SDK v2](/getting-started/upgrading/from-low-level-sdk-v2).\n\n[​](#troubleshooting) Troubleshooting\n-------------------------------------\n\n### [​](#import-fastmcp-fails-after-a-pip-upgrade) `import fastmcp` fails after a pip upgrade\n\nThis affects one specific case: upgrading to FastMCP 3.3 or later from FastMCP 3.2 or earlier with `pip`. Fresh installs and `uv` upgrades are unaffected, so you can skip this unless you did exactly that.\nIf `import fastmcp` raises `ModuleNotFoundError`, or `from fastmcp import FastMCP` raises `ImportError`, immediately after the upgrade, your install is in a half-removed state. Reinstall in a single step:\n\n```\npip install --force-reinstall fastmcp\n```\n\nIf that doesn’t resolve it, remove both distributions and reinstall from a clean state:\n\n```\npip uninstall -y fastmcp fastmcp-slim\npip install fastmcp\n```\n\nFastMCP 3.3 moved the importable code from the `fastmcp` distribution into `fastmcp-slim`. During a single-command `pip` upgrade, pip can install the new files and then delete them while uninstalling the old `fastmcp` distribution, whose file manifest still lists those paths. `uv` uninstalls before it installs, so it is unaffected.\n\n[​](#versioning-policy) Versioning Policy\n-----------------------------------------\n\nFastMCP follows semantic versioning with pragmatic adaptations for the rapidly evolving MCP ecosystem. Breaking changes may occur in minor versions (e.g., 2.3.x to 2.4.0) when necessary to stay current with the MCP Protocol.\nFor production use, always pin to exact versions:\n\n```\nfastmcp==4.0.5    # Good - an exact version\nfastmcp>=4.0.0    # Bad - may install breaking changes\n```\n\nSee the full [versioning and release policy](/development/releases#versioning-policy) for details on our public API, deprecation practices, and breaking change philosophy.\n\n[​](#contributing-to-fastmcp) Contributing to FastMCP\n-----------------------------------------------------\n\nThe [Contributing Guide](/development/contributing) covers setting up a development environment, running the test suite and pre-commit hooks, and the standards we hold contributed code to.",
+          ""
+        ],
+        "url": "https://gofastmcp.com/getting-started/installation"
+      }
+    },
+    "error": null,
+    "status": "completed",
+    "evidence_origin": "codex-browser.jsonl"
+  },
+  {
+    "id": "item_4",
+    "type": "mcp_tool_call",
+    "server": "scrapling_local",
+    "tool": "open_session",
+    "arguments": {
+      "session_type": "dynamic",
+      "session_id": "codex-acceptance"
+    },
+    "result": null,
+    "error": {
+      "message": "user cancelled MCP tool call"
+    },
+    "status": "failed",
+    "evidence_origin": "codex-browser.jsonl"
+  },
+  {
+    "id": "item_6",
+    "type": "mcp_tool_call",
+    "server": "scrapling_local",
+    "tool": "close_session",
+    "arguments": {
+      "session_id": "codex-acceptance"
+    },
+    "result": null,
+    "error": {
+      "message": "user cancelled MCP tool call"
+    },
+    "status": "failed",
+    "evidence_origin": "codex-browser.jsonl"
+  },
+  {
+    "id": "item_7",
+    "type": "mcp_tool_call",
+    "server": "scrapling_local",
+    "tool": "list_sessions",
+    "arguments": {},
+    "result": {
+      "content": [],
+      "structured_content": {
+        "result": []
+      }
+    },
+    "error": null,
+    "status": "completed",
+    "evidence_origin": "codex-browser.jsonl"
+  }
+]

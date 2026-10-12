@@ -1,0 +1,33 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "scrapling-codex",
+  "version": "0.1.1",
+  "description": "Official Scrapling MCP tools and pinned developer references in an unofficial local Codex plugin.",
+  "author": {
+    "name": "Unofficial Scrapling integration"
+  },
+  "keywords": [
+    "scrapling",
+    "web-scraping",
+    "codex",
+    "mcp",
+    "python"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Scrapling for Codex",
+        "shortDescription": "Local web scraping for Codex",
+        "longDescription": "Unofficial local integration of the official Scrapling 0.4.15 MCP, with pinned references for webpage extraction and Python crawler development.",
+        "developerName": "Unofficial community wrapper",
+        "category": "Productivity",
+        "capabilities": [
+          "Read"
+        ],
+        "defaultPrompt": [
+          "Use Scrapling to inspect the public web pages I specify, extract requested content, and help develop a bounded Python crawler."
+        ]
+      }
+    }
+  }
+}

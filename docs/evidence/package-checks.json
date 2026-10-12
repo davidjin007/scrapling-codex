@@ -1,0 +1,8 @@
+{
+  "plugin_schema": true,
+  "mcp_schema": true,
+  "identity_version_paths": true,
+  "skill_links": true,
+  "license": true,
+  "marketplace_source": true
+}

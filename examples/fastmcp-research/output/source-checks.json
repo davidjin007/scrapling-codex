@@ -1,0 +1,47 @@
+{
+  "pages_ok": 10,
+  "unique_urls": 10,
+  "minimum_request_start_gap": 1.0000692000612617,
+  "concurrency": 1,
+  "spot_checks": [
+    {
+      "url": "https://gofastmcp.com/getting-started/installation",
+      "http_status": 200,
+      "title_matches": true,
+      "snippets_match": {
+        "uv add fastmcp": true,
+        "pip install fastmcp": true,
+        "fastmcp version": true
+      },
+      "extracted_code_blocks": 9,
+      "source_pre_elements": 9,
+      "navigation_absent": true
+    },
+    {
+      "url": "https://gofastmcp.com/getting-started/quickstart",
+      "http_status": 200,
+      "title_matches": true,
+      "snippets_match": {
+        "from fastmcp import FastMCP": true,
+        "def greet(name: str) -> str:": true,
+        "@mcp.tool": true
+      },
+      "extracted_code_blocks": 6,
+      "source_pre_elements": 8,
+      "navigation_absent": true
+    },
+    {
+      "url": "https://gofastmcp.com/deployment/running-server",
+      "http_status": 200,
+      "title_matches": true,
+      "snippets_match": {
+        "mcp.run()": true,
+        "python my_server.py": true,
+        "fastmcp run server.py": true
+      },
+      "extracted_code_blocks": 13,
+      "source_pre_elements": 13,
+      "navigation_absent": true
+    }
+  ]
+}

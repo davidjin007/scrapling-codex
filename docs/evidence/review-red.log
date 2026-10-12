@@ -1,0 +1,96 @@
+......FF                                                                 [100%]
+================================== FAILURES ===================================
+______________ test_markdown_write_failure_is_exported_as_error _______________
+
+tmp_path = WindowsPath('<LOCAL_USER_HOME>/AppData/Local/Temp/pytest-of-Dav/pytest-59/test_markdown_write_failure_is0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002AF3DEE63F0>
+
+    def test_markdown_write_failure_is_exported_as_error(tmp_path,monkeypatch):
+        write=Path.write_text
+        def disk_full(path,*args,**kw):
+            if path.suffix=='.md':
+                raise OSError('fixture disk full')
+            return write(path,*args,**kw)
+        monkeypatch.setattr(Path,'write_text',disk_full)
+        rows=collect(['https://docs.example/a'],tmp_path,lambda u,**kw:response(u),interval=0)
+>       assert rows[0]['status']=='error' and rows[0]['file'] is None and rows[0]['markdown'] is None
+E       AssertionError: assert ('ok' == 'error'
+E         
+E         - error
+E         + ok)
+
+tests\test_collect.py:82: AssertionError
+---------------------------- Captured stderr call -----------------------------
+[2026-10-12 08:42:03] INFO: Fetched (200) <GET https://docs.example/a> (referer: None)
+[2026-10-12 08:42:03] INFO: Fetched (200) <GET https://docs.example/a> (referer: None)
+------------------------------ Captured log call ------------------------------
+INFO     scrapling:custom.py:74 Fetched (200) <GET https://docs.example/a> (referer: None)
+INFO     scrapling:custom.py:74 Fetched (200) <GET https://docs.example/a> (referer: None)
+________ test_failed_cleanup_is_reported_without_aborting_error_export ________
+
+path = WindowsPath('<LOCAL_USER_HOME>/AppData/Local/Temp/pytest-of-Dav/pytest-59/test_failed_cleanup_is_reporte0/pages/b0ca1b0a1d5efb56.md')
+args = ('# Install\n\nSource: https://docs.example/a\nCollected: 2026-10-12T16:42:03.181660+00:00\n\nUse an isolated environment.\n\n```\nprint("ok")\n```\n',)
+kw = {'encoding': 'utf-8'}
+
+    def fail_write(path,*args,**kw):
+>       if path.suffix=='.md': raise OSError('fixture write failure')
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       OSError: fixture write failure
+
+tests\test_collect.py:93: OSError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = WindowsPath('<LOCAL_USER_HOME>/AppData/Local/Temp/pytest-of-Dav/pytest-59/test_failed_cleanup_is_reporte0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002AF3DEE6190>
+
+    def test_failed_cleanup_is_reported_without_aborting_error_export(tmp_path,monkeypatch):
+        urls=['https://docs.example/a']
+        first=collect(urls,tmp_path,lambda u,**kw:response(u),interval=0)
+        write,unlink=Path.write_text,Path.unlink
+        def fail_write(path,*args,**kw):
+            if path.suffix=='.md': raise OSError('fixture write failure')
+            return write(path,*args,**kw)
+        def fail_cleanup(path,*args,**kw):
+            if path.suffix=='.md': raise PermissionError('fixture locked stale file')
+            return unlink(path,*args,**kw)
+        monkeypatch.setattr(Path,'write_text',fail_write)
+        monkeypatch.setattr(Path,'unlink',fail_cleanup)
+>       rows=collect(urls,tmp_path,lambda u,**kw:response(u),interval=0)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_collect.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+collect.py:106: in collect
+    target.unlink(missing_ok=True)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+path = WindowsPath('<LOCAL_USER_HOME>/AppData/Local/Temp/pytest-of-Dav/pytest-59/test_failed_cleanup_is_reporte0/pages/b0ca1b0a1d5efb56.md')
+args = (), kw = {'missing_ok': True}
+
+    def fail_cleanup(path,*args,**kw):
+>       if path.suffix=='.md': raise PermissionError('fixture locked stale file')
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       PermissionError: fixture locked stale file
+
+tests\test_collect.py:96: PermissionError
+---------------------------- Captured stderr call -----------------------------
+[2026-10-12 08:42:03] INFO: Fetched (200) <GET https://docs.example/a> (referer: None)
+[2026-10-12 08:42:03] INFO: Fetched (200) <GET https://docs.example/a> (referer: None)
+[2026-10-12 08:42:03] INFO: Fetched (200) <GET https://docs.example/a> (referer: None)
+[2026-10-12 08:42:03] INFO: Fetched (200) <GET https://docs.example/a> (referer: None)
+------------------------------ Captured log call ------------------------------
+INFO     scrapling:custom.py:74 Fetched (200) <GET https://docs.example/a> (referer: None)
+INFO     scrapling:custom.py:74 Fetched (200) <GET https://docs.example/a> (referer: None)
+INFO     scrapling:custom.py:74 Fetched (200) <GET https://docs.example/a> (referer: None)
+INFO     scrapling:custom.py:74 Fetched (200) <GET https://docs.example/a> (referer: None)
+============================== warnings summary ===============================
+tests/test_collect.py: 22 warnings
+  <LOCAL_USER_HOME>\Documents\Codex Project\��������\examples\fastmcp-research\.venv\Lib\site-packages\lxml\html\__init__.py:1891: DeprecationWarning: The 'strip_cdata' option of HTMLParser() has never done anything and will eventually be removed.
+    super().__init__(**kwargs)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_collect.py::test_markdown_write_failure_is_exported_as_error
+FAILED tests/test_collect.py::test_failed_cleanup_is_reported_without_aborting_error_export
+2 failed, 6 passed, 22 warnings in 0.70s

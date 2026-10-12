@@ -1,0 +1,728 @@
+[
+  {
+    "tool": "make_request",
+    "arguments": {
+      "url": "http://127.0.0.1:10224",
+      "css_selector": "h1",
+      "extraction_type": "text"
+    },
+    "result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": 200,\n  \"content\": [\n    \"Fixture heading\",\n    \"\"\n  ],\n  \"url\": \"http://127.0.0.1:10224/\"\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "status": 200,
+        "content": [
+          "Fixture heading",
+          ""
+        ],
+        "url": "http://127.0.0.1:10224/"
+      },
+      "is_error": false,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "make_request",
+    "arguments": {
+      "url": "http://127.0.0.1:10224",
+      "css_selector": "title",
+      "main_content_only": false,
+      "extraction_type": "text"
+    },
+    "result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": 200,\n  \"content\": [\n    \"Fixture title\",\n    \"\"\n  ],\n  \"url\": \"http://127.0.0.1:10224/\"\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "status": 200,
+        "content": [
+          "Fixture title",
+          ""
+        ],
+        "url": "http://127.0.0.1:10224/"
+      },
+      "is_error": false,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "make_request",
+    "arguments": {
+      "url": "http://127.0.0.1:10224",
+      "css_selector": "main",
+      "extraction_type": "markdown"
+    },
+    "result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": 200,\n  \"content\": [\n    \"Fixture heading\\n===============\\n\\nPending\\n\\n```\\nprint(\\\"scrapling\\\")\\n```\",\n    \"\"\n  ],\n  \"url\": \"http://127.0.0.1:10224/\"\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "status": 200,
+        "content": [
+          "Fixture heading\n===============\n\nPending\n\n```\nprint(\"scrapling\")\n```",
+          ""
+        ],
+        "url": "http://127.0.0.1:10224/"
+      },
+      "is_error": false,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "make_request",
+    "arguments": {
+      "url": "http://127.0.0.1:10224",
+      "css_selector": ".not-present"
+    },
+    "result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": 200,\n  \"content\": [\n    \"\"\n  ],\n  \"url\": \"http://127.0.0.1:10224/\"\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "status": 200,
+        "content": [
+          ""
+        ],
+        "url": "http://127.0.0.1:10224/"
+      },
+      "is_error": false,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "session_fetch",
+    "arguments": {
+      "url": "http://127.0.0.1:10224",
+      "session_id": "not-present"
+    },
+    "result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "Error executing tool session_fetch",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": null,
+      "is_error": true,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "make_request",
+    "arguments": {
+      "url": "http://127.0.0.1:10224/slow",
+      "timeout": 0.1,
+      "retries": 1
+    },
+    "result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "Error executing tool make_request",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": null,
+      "is_error": true,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "open_request_session",
+    "arguments": {
+      "session_id": "http-fixture"
+    },
+    "result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"session_id\": \"http-fixture\",\n  \"session_type\": \"static\",\n  \"created_at\": \"2026-10-12T16:25:38.186520+00:00\",\n  \"is_alive\": true,\n  \"settings\": {\n    \"stealthy_headers\": true,\n    \"impersonate\": \"chrome\",\n    \"proxy\": null,\n    \"proxy_auth\": null,\n    \"timeout\": 30,\n    \"retries\": 3,\n    \"retry_delay\": 1,\n    \"follow_redirects\": \"safe\",\n    \"max_redirects\": 30,\n    \"verify\": true,\n    \"cert\": null,\n    \"http3\": false\n  },\n  \"message\": \"Session 'http-fixture' (static) created successfully.\"\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "session_id": "http-fixture",
+        "session_type": "static",
+        "created_at": "2026-10-12T16:25:38.186520+00:00",
+        "is_alive": true,
+        "settings": {
+          "stealthy_headers": true,
+          "impersonate": "chrome",
+          "proxy": null,
+          "proxy_auth": null,
+          "timeout": 30,
+          "retries": 3,
+          "retry_delay": 1,
+          "follow_redirects": "safe",
+          "max_redirects": 30,
+          "verify": true,
+          "cert": null,
+          "http3": false
+        },
+        "message": "Session 'http-fixture' (static) created successfully."
+      },
+      "is_error": false,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "session_make_request",
+    "arguments": {
+      "url": "http://127.0.0.1:10224/set-cookie",
+      "session_id": "http-fixture"
+    },
+    "result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": 200,\n  \"content\": [\n    \"Navigation noise\\n\\nFixture heading\\n===============\\n\\nPending\\n\\n```\\nprint(\\\"scrapling\\\")\\n```\",\n    \"\"\n  ],\n  \"url\": \"http://127.0.0.1:10224/set-cookie\"\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "status": 200,
+        "content": [
+          "Navigation noise\n\nFixture heading\n===============\n\nPending\n\n```\nprint(\"scrapling\")\n```",
+          ""
+        ],
+        "url": "http://127.0.0.1:10224/set-cookie"
+      },
+      "is_error": false,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "session_make_request",
+    "arguments": {
+      "url": "http://127.0.0.1:10224/cookie",
+      "session_id": "http-fixture"
+    },
+    "result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": 200,\n  \"content\": [\n    \"fixture=yes\",\n    \"\"\n  ],\n  \"url\": \"http://127.0.0.1:10224/cookie\"\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "status": 200,
+        "content": [
+          "fixture=yes",
+          ""
+        ],
+        "url": "http://127.0.0.1:10224/cookie"
+      },
+      "is_error": false,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "close_session",
+    "arguments": {
+      "session_id": "http-fixture"
+    },
+    "result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"session_id\": \"http-fixture\",\n  \"message\": \"Session 'http-fixture' closed successfully.\"\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "session_id": "http-fixture",
+        "message": "Session 'http-fixture' closed successfully."
+      },
+      "is_error": false,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "fetch",
+    "arguments": {
+      "url": "http://127.0.0.1:10224",
+      "css_selector": "#state",
+      "wait": 400,
+      "google_search": false
+    },
+    "result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": 200,\n  \"content\": [\n    \"Dynamic ready\",\n    \"\"\n  ],\n  \"url\": \"http://127.0.0.1:10224/\"\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "status": 200,
+        "content": [
+          "Dynamic ready",
+          ""
+        ],
+        "url": "http://127.0.0.1:10224/"
+      },
+      "is_error": false,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "open_session",
+    "arguments": {
+      "session_type": "dynamic",
+      "session_id": "dynamic-fixture"
+    },
+    "result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"session_id\": \"dynamic-fixture\",\n  \"session_type\": \"dynamic\",\n  \"created_at\": \"2026-10-12T16:25:40.257752+00:00\",\n  \"is_alive\": true,\n  \"settings\": {\n    \"max_pages\": 1,\n    \"headless\": true,\n    \"disable_resources\": false,\n    \"network_idle\": false,\n    \"load_dom\": true,\n    \"wait_selector\": null,\n    \"wait_selector_state\": \"attached\",\n    \"google_search\": true,\n    \"wait\": 0,\n    \"timezone_id\": null,\n    \"page_action\": null,\n    \"page_setup\": null,\n    \"proxy\": null,\n    \"proxy_rotator\": null,\n    \"extra_headers\": null,\n    \"timeout\": 30000,\n    \"init_script\": null,\n    \"user_data_dir\": \"\",\n    \"locale\": null,\n    \"real_chrome\": false,\n    \"cdp_url\": null,\n    \"useragent\": null,\n    \"block_ads\": true,\n    \"retries\": 3,\n    \"retry_delay\": 1,\n    \"capture_xhr\": null,\n    \"executable_path\": \"C:/Program Files/Google/Chrome/Application/chrome.exe\",\n    \"dns_over_https\": false\n  },\n  \"message\": \"Session 'dynamic-fixture' (dynamic) created successfully.\"\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "session_id": "dynamic-fixture",
+        "session_type": "dynamic",
+        "created_at": "2026-10-12T16:25:40.257752+00:00",
+        "is_alive": true,
+        "settings": {
+          "max_pages": 1,
+          "headless": true,
+          "disable_resources": false,
+          "network_idle": false,
+          "load_dom": true,
+          "wait_selector": null,
+          "wait_selector_state": "attached",
+          "google_search": true,
+          "wait": 0,
+          "timezone_id": null,
+          "page_action": null,
+          "page_setup": null,
+          "proxy": null,
+          "proxy_rotator": null,
+          "extra_headers": null,
+          "timeout": 30000,
+          "init_script": null,
+          "user_data_dir": "",
+          "locale": null,
+          "real_chrome": false,
+          "cdp_url": null,
+          "useragent": null,
+          "block_ads": true,
+          "retries": 3,
+          "retry_delay": 1,
+          "capture_xhr": null,
+          "executable_path": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+          "dns_over_https": false
+        },
+        "message": "Session 'dynamic-fixture' (dynamic) created successfully."
+      },
+      "is_error": false,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "session_fetch",
+    "arguments": {
+      "url": "http://127.0.0.1:10224",
+      "session_id": "dynamic-fixture",
+      "css_selector": "#state",
+      "wait": 400,
+      "google_search": false
+    },
+    "result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": 200,\n  \"content\": [\n    \"Dynamic ready\",\n    \"\"\n  ],\n  \"url\": \"http://127.0.0.1:10224/\"\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "status": 200,
+        "content": [
+          "Dynamic ready",
+          ""
+        ],
+        "url": "http://127.0.0.1:10224/"
+      },
+      "is_error": false,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "session_fetch",
+    "arguments": {
+      "url": "http://127.0.0.1:10224/cookie",
+      "session_id": "dynamic-fixture",
+      "css_selector": "main",
+      "extraction_type": "text",
+      "google_search": false
+    },
+    "result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": 200,\n  \"content\": [\n    \"browser_fixture=yes\",\n    \"\"\n  ],\n  \"url\": \"http://127.0.0.1:10224/cookie\"\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "status": 200,
+        "content": [
+          "browser_fixture=yes",
+          ""
+        ],
+        "url": "http://127.0.0.1:10224/cookie"
+      },
+      "is_error": false,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "screenshot",
+    "arguments": {
+      "url": "http://127.0.0.1:10224",
+      "session_id": "dynamic-fixture",
+      "wait": 400
+    },
+    "result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "image",
+          "mime_type": "image/png",
+          "annotations": null,
+          "meta": null,
+          "saved_file": "screenshot.png",
+          "bytes": 31890
+        },
+        {
+          "type": "text",
+          "text": "http://127.0.0.1:10224/",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": null,
+      "is_error": false,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "session_fetch",
+    "arguments": {
+      "url": "http://127.0.0.1:10224/slow",
+      "session_id": "dynamic-fixture",
+      "timeout": 100,
+      "google_search": false
+    },
+    "result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "Error executing tool session_fetch",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": null,
+      "is_error": true,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "close_session",
+    "arguments": {
+      "session_id": "dynamic-fixture"
+    },
+    "result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"session_id\": \"dynamic-fixture\",\n  \"message\": \"Session 'dynamic-fixture' closed successfully.\"\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "session_id": "dynamic-fixture",
+        "message": "Session 'dynamic-fixture' closed successfully."
+      },
+      "is_error": false,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "stealthy_fetch",
+    "arguments": {
+      "url": "http://127.0.0.1:10224",
+      "css_selector": "#state",
+      "wait": 400,
+      "google_search": false
+    },
+    "result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": 200,\n  \"content\": [\n    \"Dynamic ready\",\n    \"\"\n  ],\n  \"url\": \"http://127.0.0.1:10224/\"\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "status": 200,
+        "content": [
+          "Dynamic ready",
+          ""
+        ],
+        "url": "http://127.0.0.1:10224/"
+      },
+      "is_error": false,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "open_session",
+    "arguments": {
+      "session_type": "stealthy",
+      "session_id": "stealthy-fixture"
+    },
+    "result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"session_id\": \"stealthy-fixture\",\n  \"session_type\": \"stealthy\",\n  \"created_at\": \"2026-10-12T16:25:46.055178+00:00\",\n  \"is_alive\": true,\n  \"settings\": {\n    \"max_pages\": 1,\n    \"headless\": true,\n    \"disable_resources\": false,\n    \"network_idle\": false,\n    \"load_dom\": true,\n    \"wait_selector\": null,\n    \"wait_selector_state\": \"attached\",\n    \"google_search\": true,\n    \"wait\": 0,\n    \"timezone_id\": null,\n    \"page_action\": null,\n    \"page_setup\": null,\n    \"proxy\": null,\n    \"proxy_rotator\": null,\n    \"extra_headers\": null,\n    \"timeout\": 30000,\n    \"init_script\": null,\n    \"user_data_dir\": \"\",\n    \"locale\": null,\n    \"real_chrome\": false,\n    \"cdp_url\": null,\n    \"useragent\": null,\n    \"block_ads\": true,\n    \"retries\": 3,\n    \"retry_delay\": 1,\n    \"capture_xhr\": null,\n    \"executable_path\": \"C:/Program Files/Google/Chrome/Application/chrome.exe\",\n    \"dns_over_https\": false,\n    \"allow_webgl\": true,\n    \"hide_canvas\": false,\n    \"block_webrtc\": false,\n    \"solve_cloudflare\": false\n  },\n  \"message\": \"Session 'stealthy-fixture' (stealthy) created successfully.\"\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "session_id": "stealthy-fixture",
+        "session_type": "stealthy",
+        "created_at": "2026-10-12T16:25:46.055178+00:00",
+        "is_alive": true,
+        "settings": {
+          "max_pages": 1,
+          "headless": true,
+          "disable_resources": false,
+          "network_idle": false,
+          "load_dom": true,
+          "wait_selector": null,
+          "wait_selector_state": "attached",
+          "google_search": true,
+          "wait": 0,
+          "timezone_id": null,
+          "page_action": null,
+          "page_setup": null,
+          "proxy": null,
+          "proxy_rotator": null,
+          "extra_headers": null,
+          "timeout": 30000,
+          "init_script": null,
+          "user_data_dir": "",
+          "locale": null,
+          "real_chrome": false,
+          "cdp_url": null,
+          "useragent": null,
+          "block_ads": true,
+          "retries": 3,
+          "retry_delay": 1,
+          "capture_xhr": null,
+          "executable_path": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+          "dns_over_https": false,
+          "allow_webgl": true,
+          "hide_canvas": false,
+          "block_webrtc": false,
+          "solve_cloudflare": false
+        },
+        "message": "Session 'stealthy-fixture' (stealthy) created successfully."
+      },
+      "is_error": false,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "session_fetch",
+    "arguments": {
+      "url": "http://127.0.0.1:10224",
+      "session_id": "stealthy-fixture",
+      "css_selector": "#state",
+      "wait": 400,
+      "google_search": false
+    },
+    "result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": 200,\n  \"content\": [\n    \"Dynamic ready\",\n    \"\"\n  ],\n  \"url\": \"http://127.0.0.1:10224/\"\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "status": 200,
+        "content": [
+          "Dynamic ready",
+          ""
+        ],
+        "url": "http://127.0.0.1:10224/"
+      },
+      "is_error": false,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "session_fetch",
+    "arguments": {
+      "url": "http://127.0.0.1:10224/cookie",
+      "session_id": "stealthy-fixture",
+      "css_selector": "main",
+      "extraction_type": "text",
+      "google_search": false
+    },
+    "result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"status\": 200,\n  \"content\": [\n    \"browser_fixture=yes\",\n    \"\"\n  ],\n  \"url\": \"http://127.0.0.1:10224/cookie\"\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "status": 200,
+        "content": [
+          "browser_fixture=yes",
+          ""
+        ],
+        "url": "http://127.0.0.1:10224/cookie"
+      },
+      "is_error": false,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "close_session",
+    "arguments": {
+      "session_id": "stealthy-fixture"
+    },
+    "result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"session_id\": \"stealthy-fixture\",\n  \"message\": \"Session 'stealthy-fixture' closed successfully.\"\n}",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": {
+        "session_id": "stealthy-fixture",
+        "message": "Session 'stealthy-fixture' closed successfully."
+      },
+      "is_error": false,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "open_session",
+    "arguments": {
+      "session_type": "dynamic",
+      "session_id": "missing-fixture",
+      "executable_path": "<LOCAL_USER_HOME>\\Documents\\Codex Project\\工具作坊\\artifacts\\mcp\\does-not-exist.exe"
+    },
+    "result": {
+      "meta": null,
+      "content": [
+        {
+          "type": "text",
+          "text": "Error executing tool open_session",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": null,
+      "is_error": true,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "list_sessions",
+    "arguments": {},
+    "result": {
+      "meta": null,
+      "content": [],
+      "structured_content": {
+        "result": []
+      },
+      "is_error": false,
+      "result_type": "complete"
+    }
+  },
+  {
+    "tool": "list_sessions",
+    "arguments": {},
+    "result": {
+      "meta": null,
+      "content": [],
+      "structured_content": {
+        "result": []
+      },
+      "is_error": false,
+      "result_type": "complete"
+    }
+  }
+]

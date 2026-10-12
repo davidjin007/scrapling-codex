@@ -1,0 +1,19 @@
+{
+  "plugin_version": "0.1.1",
+  "scrapling_version": "0.4.15",
+  "expected_mcp_tools": [
+    "open_session",
+    "open_request_session",
+    "close_session",
+    "list_sessions",
+    "make_request",
+    "bulk_get",
+    "fetch",
+    "bulk_fetch",
+    "stealthy_fetch",
+    "bulk_stealthy_fetch",
+    "session_fetch",
+    "session_make_request",
+    "screenshot"
+  ]
+}
