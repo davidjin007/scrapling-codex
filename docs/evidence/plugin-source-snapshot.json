@@ -1,0 +1,135 @@
+{
+  "plugin_version": "0.1.1",
+  "scrapling_version": "0.4.15",
+  "files": [
+    {
+      "path": ".codex-plugin/plugin.json",
+      "sha256": "96b32459dae6410b031564c16f2666e7a0f0e782bed650b24a21ff5a4acb9892"
+    },
+    {
+      "path": ".mcp.json",
+      "sha256": "96c625d40a602b09f60d43a4461f13ae95545ad0130ed71ca36bfdbee4a429a6"
+    },
+    {
+      "path": "mcp.json",
+      "sha256": "60687162754446c71d8396c96081b80f427d81681f25be88b5f6d611d98c4719"
+    },
+    {
+      "path": "plugin.json",
+      "sha256": "9789b336083f9ad28b8d03c3ae36762827eed78d542faa8403fc8ba5ccadba6b"
+    },
+    {
+      "path": "README.md",
+      "sha256": "83e841e6b2ca917f45fd803c867e2aa9b3bfa0bc8ebed188eaa8540df9f82dd6"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/SOURCES.md",
+      "sha256": "0963a3d60b8c42243c5f01622171bf310a4b94faea415d0b1cf0e71280d416c2"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/examples/01_fetcher_session.py",
+      "sha256": "05fdb45c20a304f0fc8c979eabe7eb78b467951219be7b0a6a45d44c05b3ff68"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/examples/02_dynamic_session.py",
+      "sha256": "9006f94a2648ef7a3c0c7365d636f8a962dc490d192550b9148b40e3c816a5c2"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/examples/03_stealthy_session.py",
+      "sha256": "a461dd666b82ce478e4bfdb966724d1c1b8807a3a10ce6b918d449c4d553bd4d"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/examples/04_spider.py",
+      "sha256": "2a899a24ebc827bec0b395f60d276813a99d27575255d28ede30e2cce38beac7"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/examples/README.md",
+      "sha256": "5ee5f38843aa04a7fee1dd9e5d978350931b6633d3b6484a6e96aa4beb5c3f7c"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/LICENSE.txt",
+      "sha256": "5c782ef0346e4fbfe0dc76fd435f181a0f1e4a1a7a6b13c169c6e74314ff5964"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/references/building-rag-systems.md",
+      "sha256": "832a63cd58377ad6fb187ea61d720d2100c703186b46fd81066716a8aa9540c7"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/references/fetching/choosing.md",
+      "sha256": "256405134a9a6403b2fd32ecbfa5dfdab884f40225e88b644001e89979ab44b3"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/references/fetching/dynamic.md",
+      "sha256": "7ffcbadbd38ffde42ce9d55dd8fdbccab7b6d1cfb8159398b9d3427f7dd0ac2e"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/references/fetching/static.md",
+      "sha256": "93e1629ab6aa8cbf06f6e8b3b1da8845fde89fc3aab3b68f25393b20f70a6a2a"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/references/fetching/stealthy.md",
+      "sha256": "a26ce9accd072a121878e756f5bb31c9095e1e82cb6d761bd684403e9ee328e8"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/references/integrations/scrapy.md",
+      "sha256": "dafeb66ee73ffa4b88d28382f647d37124a91698a03c90fd4121cb229cc79f46"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/references/mcp-server.md",
+      "sha256": "e1469bf7fd099aeb2a48a568b358166868a6650f483dcc686d400d1845d27c39"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/references/migrating_from_beautifulsoup.md",
+      "sha256": "4d06027059185c16d4f8e2e130cd14f1e1b8612efa327d5bf3d0fee2f23199ac"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/references/parsing/adaptive.md",
+      "sha256": "5f25a54c590700f8c821010733ae079b4edea2a2e8a48074f35c0ed4561c202c"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/references/parsing/main_classes.md",
+      "sha256": "2e977b335bf270f1cc7760de6393e09ee9346a8e880c1e9a891a2a58541c3600"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/references/parsing/selection.md",
+      "sha256": "4975a4b43e1180826d8145efb129826c3206e1b3a91511ef60622841143184aa"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/references/spiders/advanced.md",
+      "sha256": "1c44c1d2e4c952e6e4784e80e62634684594f885877c1cb38e7c23f40a020242"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/references/spiders/architecture.md",
+      "sha256": "de66f57537c134e68f03860e3385e168d33cd2abde19f910aaa1a2d9fea022e7"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/references/spiders/generic-templates.md",
+      "sha256": "78d978ee13cc1e021c8302a06a1ed4281a10faf957e44bc0ed00bc3ecacb542c"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/references/spiders/getting-started.md",
+      "sha256": "85456e4d43b4980916421c312276519665eb61521dd822b70fe6b0bed46da820"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/references/spiders/platform-templates.md",
+      "sha256": "9692f6b9d246f9c0da3d6f712368099f0ac9217058a262ccfbd7c806a389a55b"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/references/spiders/proxy-blocking.md",
+      "sha256": "bd21204aeafc1b11ef935ed984bd445deaa92657151b29829787fced84261b5a"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/references/spiders/requests-responses.md",
+      "sha256": "938882dad9c6e90aea213f71a43024c676743399c7cf503eb6e436fe8b0369d0"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/references/upstream/references/spiders/sessions.md",
+      "sha256": "e5d9736725dc01e72ce55b38bf6f9ce2672d7876d17c23151ee01145bbb489b4"
+    },
+    {
+      "path": "skills/scrapling-web-crawl/SKILL.md",
+      "sha256": "54028f8b1ab5980aa46936ea7864c3ee50744e980790e9141b847f917cd2099b"
+    }
+  ],
+  "identical_to_original_source": true
+}

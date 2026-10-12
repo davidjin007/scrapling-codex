@@ -1,0 +1,238 @@
+{
+  "conclusion": "success",
+  "headSha": "028c694fd6af65b5713e2307430a017884a4c367",
+  "jobs": [
+    {
+      "completedAt": "2026-10-12T17:12:47Z",
+      "conclusion": "success",
+      "databaseId": 114923449402,
+      "name": "Verify (ubuntu-latest)",
+      "startedAt": "2026-10-12T17:12:27Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-12T17:12:32Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-12T17:12:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:12:37Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "number": 2,
+          "startedAt": "2026-10-12T17:12:32Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:12:38Z",
+          "conclusion": "success",
+          "name": "Run astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884",
+          "number": 3,
+          "startedAt": "2026-10-12T17:12:37Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:12:38Z",
+          "conclusion": "success",
+          "name": "Install locked maintenance dependencies",
+          "number": 4,
+          "startedAt": "2026-10-12T17:12:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:12:40Z",
+          "conclusion": "success",
+          "name": "Release tooling behavior tests (offline)",
+          "number": 5,
+          "startedAt": "2026-10-12T17:12:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:12:40Z",
+          "conclusion": "success",
+          "name": "Validate schemas and version consistency",
+          "number": 6,
+          "startedAt": "2026-10-12T17:12:40Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:12:40Z",
+          "conclusion": "skipped",
+          "name": "Validate release tag",
+          "number": 7,
+          "startedAt": "2026-10-12T17:12:40Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:12:43Z",
+          "conclusion": "success",
+          "name": "Locked collector behavior tests (offline)",
+          "number": 8,
+          "startedAt": "2026-10-12T17:12:40Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:12:43Z",
+          "conclusion": "success",
+          "name": "Package source and inspect hidden files and CRC",
+          "number": 9,
+          "startedAt": "2026-10-12T17:12:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:12:45Z",
+          "conclusion": "success",
+          "name": "Upload validation outputs",
+          "number": 10,
+          "startedAt": "2026-10-12T17:12:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:12:45Z",
+          "conclusion": "success",
+          "name": "Post Run astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884",
+          "number": 19,
+          "startedAt": "2026-10-12T17:12:45Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:12:45Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "number": 20,
+          "startedAt": "2026-10-12T17:12:45Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:12:45Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 21,
+          "startedAt": "2026-10-12T17:12:45Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/davidjin007/scrapling-codex/actions/runs/38282666331/job/114923449402"
+    },
+    {
+      "completedAt": "2026-10-12T17:13:04Z",
+      "conclusion": "success",
+      "databaseId": 114923449608,
+      "name": "Verify (windows-latest)",
+      "startedAt": "2026-10-12T17:12:27Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-12T17:12:29Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-12T17:12:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:12:35Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "number": 2,
+          "startedAt": "2026-10-12T17:12:29Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:12:36Z",
+          "conclusion": "success",
+          "name": "Run astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884",
+          "number": 3,
+          "startedAt": "2026-10-12T17:12:35Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:12:39Z",
+          "conclusion": "success",
+          "name": "Install locked maintenance dependencies",
+          "number": 4,
+          "startedAt": "2026-10-12T17:12:36Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:12:45Z",
+          "conclusion": "success",
+          "name": "Release tooling behavior tests (offline)",
+          "number": 5,
+          "startedAt": "2026-10-12T17:12:39Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:12:46Z",
+          "conclusion": "success",
+          "name": "Validate schemas and version consistency",
+          "number": 6,
+          "startedAt": "2026-10-12T17:12:45Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:12:46Z",
+          "conclusion": "skipped",
+          "name": "Validate release tag",
+          "number": 7,
+          "startedAt": "2026-10-12T17:12:46Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:12:54Z",
+          "conclusion": "success",
+          "name": "Locked collector behavior tests (offline)",
+          "number": 8,
+          "startedAt": "2026-10-12T17:12:46Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:12:56Z",
+          "conclusion": "success",
+          "name": "Package source and inspect hidden files and CRC",
+          "number": 9,
+          "startedAt": "2026-10-12T17:12:54Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:12:58Z",
+          "conclusion": "success",
+          "name": "Upload validation outputs",
+          "number": 10,
+          "startedAt": "2026-10-12T17:12:56Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:12:58Z",
+          "conclusion": "success",
+          "name": "Post Run astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884",
+          "number": 19,
+          "startedAt": "2026-10-12T17:12:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:13:02Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "number": 20,
+          "startedAt": "2026-10-12T17:12:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-12T17:13:03Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 21,
+          "startedAt": "2026-10-12T17:13:02Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/davidjin007/scrapling-codex/actions/runs/38282666331/job/114923449608"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/davidjin007/scrapling-codex/actions/runs/38282666331"
+}

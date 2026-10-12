@@ -30,10 +30,10 @@
 
 **Interfaces:** Consumes original 0.1.1 tree. Produces standalone repository and `release.json` with `plugin_version`, `scrapling_version`, `expected_mcp_tools`.
 
-- [ ] Copy curated source, verify original eight behavior tests pass. Expected: 8 passed.
-- [ ] Add maintenance documentation; record private default and no root license grant decision.
-- [ ] Scan paths/secrets and compare plugin bytes. Expected: 32 identical plugin files, no credentials.
-- [ ] Commit snapshot and documentation.
+- [x] Copy curated source, verify original eight behavior tests pass. Expected: 8 passed.
+- [x] Add maintenance documentation; record private default and no root license grant decision.
+- [x] Scan paths/secrets and compare plugin bytes. Expected: 32 identical plugin files, no credentials.
+- [x] Commit snapshot and documentation.
 
 ### Task 2: Version validation and packaging
 
@@ -41,11 +41,11 @@
 
 **Interfaces:** Consumes Task 1 metadata. Produces `validate(root, schemas=True, tag=None)` and `package(root, output=None)`, two ZIPs, SHA256 and JSON inventory.
 
-- [ ] Write tests exercising changed-version fixtures, changed dependency pins, invalid tags and archive contents/exclusions.
-- [ ] Run `uv run pytest -q`. Expected: new behavior tests fail against current hardcoded scripts.
-- [ ] Implement metadata loading, consistency validation and version-derived packaging.
-- [ ] Run `uv run pytest -q` and `uv run python scripts/validate_package.py`; build ZIPs. Expected: tests green, schemas valid, CRC/hidden files valid.
-- [ ] Commit tooling, tests and lock.
+- [x] Write tests exercising changed-version fixtures, changed dependency pins, invalid tags and archive contents/exclusions.
+- [x] Run `uv run pytest -q`. Expected: new behavior tests fail against current hardcoded scripts.
+- [x] Implement metadata loading, consistency validation and version-derived packaging.
+- [x] Run `uv run pytest -q` and `uv run python scripts/validate_package.py`; build ZIPs. Expected: tests green, schemas valid, CRC/hidden files valid.
+- [x] Commit tooling, tests and lock.
 
 ### Task 3: GitHub publication and review
 

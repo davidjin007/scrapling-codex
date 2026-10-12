@@ -25,3 +25,11 @@
 - 审查不重新判断原插件/上游内部行为；独立历史证据照实保留，若后续升级会重新验证。
 - 审查不补齐 Codex 宿主会话/截图；用户不能据此认为该层已通过。
 - 网站实时行为与法律许可充分性不由代码审查保证；保留本次快照与上游许可，更新/公开时重新核对。
+
+## GitHub 实际 CI
+
+仓库：[davidjin007/scrapling-codex](https://github.com/davidjin007/scrapling-codex)，visibility=private，默认分支 main。
+
+[首次实际 Actions 运行](https://github.com/davidjin007/scrapling-codex/actions/runs/38282666331)：提交 `028c694fd6af65b5713e2307430a017884a4c367`，Windows/Linux 两个 job 均 success，包含根测试 7 项、示例 8 项、在线 schema 校验与打包。完整 job/step 状态在 `evidence/github-ci-initial.json`。这不是浏览器或 Codex 宿主验收。
+
+插件 32 文件 SHA256 清单在 `evidence/plugin-source-snapshot.json`。发布入口：[v0.1.1 Release](https://github.com/davidjin007/scrapling-codex/releases/tag/v0.1.1)，两个 ZIP、各自 SHA256 和 release-checks.json；实际发布与标签检查以该 Release 及对应 Actions 为准。
