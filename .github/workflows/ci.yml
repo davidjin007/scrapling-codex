@@ -1,0 +1,52 @@
+name: Validate and package
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Verify (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
+        with:
+          version: '0.13.0'
+          python-version: '3.12'
+          enable-cache: false
+      - name: Install locked maintenance dependencies
+        run: uv sync --locked
+      - name: Release tooling behavior tests (offline)
+        run: uv run --locked pytest -q
+      - name: Validate schemas and version consistency
+        run: uv run --locked python scripts/validate_package.py
+      - name: Validate release tag
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: uv run --locked python scripts/validate_package.py --offline --tag "$env:RELEASE_TAG"
+        shell: pwsh
+      - name: Locked collector behavior tests (offline)
+        run: uv run --project examples/fastmcp-research --locked pytest -q examples/fastmcp-research/tests
+      - name: Package source and inspect hidden files and CRC
+        run: uv run --locked python scripts/package_release.py
+      - name: Upload validation outputs
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: packages-${{ matrix.os }}
+          path: |
+            dist/*
+            artifacts/package/checks.json
+          retention-days: 14
