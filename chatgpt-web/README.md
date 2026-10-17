@@ -1,5 +1,7 @@
 # ChatGPT Web 接入（保留 Codex 原插件）
 
+**当前优先方案：** [Windows 11 + OpenAI Secure MCP Tunnel + Scrapling stdio 完整操作指南](OPENAI-TUNNEL-WINDOWS.md)。若已创建 Tunnel，直接从该文档第 2 步继续。HTTP/公网方案保留作备用。
+
 本目录是 **Scrapling for Codex 0.1.1 / Scrapling 0.4.15** 的增量适配方案。**无需改写官方 13 个工具或另造 MCP 服务**：原插件使用 `stdio`，官方 `scrapling-mcp --http` 已支持 Streamable HTTP。注意：网页端无法直接执行本机的 `uvx` 命令，必须连接到允许的远程 MCP 服务或 Secure MCP Tunnel。
 
 > 状态：这里提供启动器、协议级检查、部署/接入说明；**未替用户部署、创建 ChatGPT 插件或完成 ChatGPT 宿主验收**。不要把独立 MCP 验证误报为 ChatGPT 工具调用成功。
