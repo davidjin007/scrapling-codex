@@ -23,7 +23,7 @@ $env:SCRAPLING_MCP_AUTH_TOKEN = [Convert]::ToHexString($bytes)
 服务器始终只绑定 `127.0.0.1:8000`；用其他终端做 MCP 协议验收：
 
 ```powershell
-python .\chatgpt-web\check_mcp.py
+uv run --with 'mcp>=1.15,<3' --with httpx python .\chatgpt-web\check_mcp.py
 ```
 
 检查脚本会初始化 MCP、执行 `tools/list`、检查官方 13 个工具名称，不触发真实网页抓取；默认从环境变量取 Bearer token。也可在本地端口用 MCP Inspector 交互测试。若首次需要浏览器运行环境，执行 `uvx --from 'scrapling[ai]==0.4.15' scrapling install`。脚本会自动尝试查找默认 Chrome 安装路径；也可自己设置 `SCRAPLING_EXECUTABLE_PATH`。
@@ -58,7 +58,7 @@ tunnel-client run --profile scrapling-local
 ```powershell
 Remove-Item Env:SCRAPLING_MCP_AUTH_TOKEN -ErrorAction SilentlyContinue
 .\chatgpt-web\start-local.ps1 -ForPrivateTunnel
-python .\chatgpt-web\check_mcp.py --no-auth
+uv run --with 'mcp>=1.15,<3' --with httpx python .\chatgpt-web\check_mcp.py --no-auth
 ```
 
 `-ForPrivateTunnel` 专门用于私有 Tunnel 转发的回环地址：不要接 ngrok/Cloudflare 公网隧道，不要端口转发到互联网；浏览器/本机恶意程序仍可能访问无鉴权回环端口。不能接受该风险时请选择上面的 stdio 方式。
