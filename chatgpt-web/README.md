@@ -26,7 +26,7 @@ $env:SCRAPLING_MCP_AUTH_TOKEN = [Convert]::ToHexString($bytes)
 uv run --with 'mcp>=1.15,<3' --with httpx python .\chatgpt-web\check_mcp.py
 ```
 
-检查脚本会初始化 MCP、执行 `tools/list`、检查官方 13 个工具名称，不触发真实网页抓取；默认从环境变量取 Bearer token。也可在本地端口用 MCP Inspector 交互测试。若首次需要浏览器运行环境，执行 `uvx --from 'scrapling[ai]==0.4.15' scrapling install`。脚本会自动尝试查找默认 Chrome 安装路径；也可自己设置 `SCRAPLING_EXECUTABLE_PATH`。
+注意新开的 PowerShell 窗口不会继承第一窗口临时设置的 token；请将**同一密钥**安全地设置到测试终端的 `SCRAPLING_MCP_AUTH_TOKEN`，不要记录在 Git、聊天、命令日志中。检查脚本会初始化 MCP、执行 `tools/list`、检查官方 13 个工具名称，不触发真实网页抓取；默认从环境变量取 Bearer token。也可在本地端口用 MCP Inspector 交互测试。若首次需要浏览器运行环境，执行 `uvx --from 'scrapling[ai]==0.4.15' scrapling install`。脚本会自动尝试查找默认 Chrome 安装路径；也可自己设置 `SCRAPLING_EXECUTABLE_PATH`。
 
 **这一步只代表服务可运行；ChatGPT 尚无法访问这个回环地址。**
 
